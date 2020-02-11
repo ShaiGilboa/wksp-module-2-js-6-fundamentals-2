@@ -9,12 +9,18 @@ let verifyEquals = require('../../assets/verify-equals');
 // JAVASCRIPT -> No
 
 function f(str) {
-
+    if (typeof(str) !== 'string') return undefined;
+    let first = 0;
+        for (let i = str.length - 1; i >= first; i--){
+            if (str.charAt(i) !== str.charAt(first)) return false;
+            first ++;
+        }
+    return true;
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ['radar radar', 'Jad  aJ', 'abcba', 'trt', 'trrtr', '', 232];
+let outputs = [true, false, true, true, false, undefined];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.

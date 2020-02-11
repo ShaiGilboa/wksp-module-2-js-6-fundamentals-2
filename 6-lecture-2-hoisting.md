@@ -25,6 +25,7 @@ var greeting = 'Hello';
 // b. undefined
 // c. Uncaught ReferenceError: greeting is not defined
 ```
+hoisting brings up the declaration but not the value;
 
 ---
 
@@ -41,7 +42,7 @@ const anotherGreeting = 'Good evening';
 // b. undefined
 // c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization
 ```
-
+const not hoisted
 ---
 
 ```js
@@ -53,7 +54,7 @@ let yetAnotherGreeting = 'Goodnight';
 // b. undefined
 // c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization
 ```
-
+let is not hoisted
 ---
 
 Yet another reason to take `var` and bury it somewhere... ⚰️

@@ -28,7 +28,7 @@ switch (time) {
     case 6:
         console.log('Wake up!');
         alarm();
-        break;
+        break; // stick with break, unless we need to return something - then we use return.
     case 22:
         console.log('off to bed');
         turnOffComputer();
@@ -46,7 +46,7 @@ switch (time) {
 
 - `break` will _break_ out of the switch case.
 - Without a `break`, the following cases will also be evaluated.
-- `return` will stop the rest of the function from being evaluated.
+- `return` will stop the rest of the function from being evaluated. _wil take you out not just from the switch, but also from the function that the switch is in_   
 
 ---
 

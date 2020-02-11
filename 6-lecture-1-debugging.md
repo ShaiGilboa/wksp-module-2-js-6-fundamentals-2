@@ -106,8 +106,21 @@ _It's one of the most important parts of this course._
 
 _Let's talk about test-driven development a little._
 
+- devoloping based on the test we can build. the opposite of buiding tests for functions that have been written.
 ---
 
 ### What is a test?
+```js
+// example
+function sum(num1, num2) {
+    return num1 + num2;
+}
 
+// A test
+function sumTest(x, y, z) {
+    return sum(x, y) === z;
+}
+
+// a test case
+sumTest(5, 5, 10);
 ---

@@ -20,3 +20,41 @@
 // Because we are now going to work with the opacity and background of the buttons,
 // they need to be set here. So that they are referencable via the the style attribute.
 // initialize the background color for all of the buttons in here. (for loop)
+
+function toggleColor(btn, secondColor) {
+    btn.style.backgroundColor === 'gold' ? btn.style.backgroundColor = secondColor : btn.style.backgroundColor = 'gold';
+}
+
+function handelClickABtn(event) {
+    let btn = document.getElementById(event.target.id);
+    switch (btn.id) {
+        case 'btn-1':
+            if (btn.style.opacity === '1') {
+                btn.style.opacity = 0;
+            } else {
+                btn.style.opacity = 1;
+            } 
+            break;
+        case 'btn-2': 
+            toggleColor(btn, 'crimson');
+            break;
+        case 'btn-3':
+            toggleColor(btn, 'lightblue');
+            break;
+        case 'btn-4':
+            btn.classList.contains('jitters') ? btn.classList.remove('jitters') : btn.classList.add('jitters');
+            break;
+    }
+}
+
+
+// setting background color of all 4 btns to 'gold'
+for (i = 1; i <= 4; i++) {
+    let forBtn = document.getElementById(`btn-${i}`);
+    forBtn.style.backgroundColor = 'gold';
+    if (i === 1) forBtn.style.opacity = 1;
+}
+
+const btnClass = document.querySelector('.buttons');
+btnClass.addEventListener('click', handelClickABtn);
+

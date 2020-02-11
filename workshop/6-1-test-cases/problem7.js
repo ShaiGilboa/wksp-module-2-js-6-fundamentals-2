@@ -13,15 +13,20 @@ let verifyEquals = require('../../assets/verify-equals');
 // f(["foo", -1]) // ""
 
 function f(arr) {
-    
+    if ((typeof(arr) !== 'object') || (arr.length !== 2) || (typeof(arr[0]) !== 'string') || (typeof(arr[1]) !== 'number')) return undefined;
+    let stringReturned = '';
+    for (let i = 0; i < arr[1]; i++) {
+        stringReturned += arr[0];
+    }
+    return stringReturned;
 }
 
 // Step 2
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
 
-let inputs = [];
-let outputs = [];
+let inputs = [['ao', 2], ['bo', -1], ['co', 0], ['do', -12], ['eo', 4], [6, 2], ['go', '5']];
+let outputs = ['aoao', '', '', '', 'eoeoeoeo', undefined, undefined];
 
 // Step 3
 // Run this file in the debugger.

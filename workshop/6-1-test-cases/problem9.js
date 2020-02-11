@@ -13,12 +13,19 @@ let verifyEquals = require('../../assets/verify-equals');
 //    - A for loop might be helpful
 
 function f(str) {
+    if (typeof(str) !== 'string') return undefined;
+    let strArr = str.split(' ');
+    let longest = strArr[0];
+    for (let i = 1; i < strArr.length; i++) {
+        if (strArr[i].length >= longest.length) longest = strArr[i];
+    }
+    return longest;
 
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ['hello boy', 'hi my name is look', '', 'a ab abc', 'abc ab a', 345, [234,234,2343], ];
+let outputs = ['hello', 'look', '', 'abc', 'abc', undefined, undefined];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.

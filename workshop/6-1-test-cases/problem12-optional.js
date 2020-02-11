@@ -19,7 +19,28 @@ let verifyEquals = require('../../assets/verify-equals');
 //     - A second time to get the unique elements in the second array
 
 function f(input) {
+    console.log(typeof(input) + typeof(input[0]) + typeof(input[1]));
+    // if ((typeof(input) !== 'object') || (typeof(input[0]) !== 'object') || (typeof(input[1] !== 'object'))) return undefined;
+    console.log('hi')
+    let answer = [];
+    for (let i = 0; i < input[0].length ; i ++) {
+        console.log(i)
+        let j = 0;
+        for (; j < input[1].length; j++) {
+            console.log('j' + j)
+            if (input[0][i] === input[1][j]) j = input[1].length+3;
+        }
+        console.log('jj' + j)
+        if (j !== input[1].length + 3) answer.push(i);
+        console.log('answer ' + answer)
+    }
 
+    for (i = 0; i < answer.length; i++){
+        for (let j = i + 1; j < answer.length; j ++){
+            if (answer[i] === answer[j]) answer.splice(i,1);
+        }
+    }
+    return answer;
 }
 
 // Test cases

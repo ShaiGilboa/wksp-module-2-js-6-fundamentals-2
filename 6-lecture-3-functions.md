@@ -18,9 +18,31 @@ is a variable in function, or method, definition.
 
 ```js
 // Example
+function greeting(paramert1, parameter2....) {
+    return `${paramert1}! want some bacon?`;
+}
 
+greeting('Shai');
 ```
+```js
+function greeting(names){
+    names.forEach(function(name) {
+        console.log `${name}! want some bacon?`;
+    });
+}
+greeting(['daniel', 'bob', 'clara'])
 
+function greeting2(names){
+    // const x = names.map(function(name) {
+    //     return `${name}! want some bacon?`;
+    // });
+    // return x;
+
+    return = names.map(function(name) {
+        return `${name}! want some bacon?`;
+    });
+}
+console.log (greeting2(['daniel', 'bob', 'clara']))
 ---
 
 ### An argument
@@ -41,7 +63,7 @@ function f() {
     console.log("hello");
 }
 
-f("bye");
+f("bye"); // 'hello'
 ```
 
 ---
@@ -90,7 +112,7 @@ This will _define_ a function expression.
 The third way is an arrow function
 
 ```js
-someFunc = () => {
+someFunc = (parameters) => {
     // do something...
 }
 ```
